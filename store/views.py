@@ -6,12 +6,12 @@ from .models import Item
 
 class ItemListView(ListView):
 	model = Item
-	template_name = 'index.html'
+	template_name = 'store/index.html'
 	context_object_name = 'items'
 
 class ItemDetailView(DetailView):
 	model = Item
-	template_name = 'item_detail.html'
+	template_name = 'store/item_detail.html'
 	context_object_name = 'item_detail'
 
 
