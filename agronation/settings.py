@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'agronation',
-        'user': 'postgres',
-        'password': '',
+        'user': 'root',
+        'password': 'vishalzx',
         'host':'localhost',
         'port': '',
     }
