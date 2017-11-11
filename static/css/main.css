@@ -1,0 +1,46 @@
+.container-fluid{
+	padding: 0;
+}
+
+/*navbar*/
+.nav-cust{
+	height: 7em;
+}
+
+
+/* search bar */
+.search-div{
+	margin-left: 20%;
+}
+
+
+
+
+
+
+.header{
+	background: url('../img/headerimg.jpeg');
+	min-height: 40em;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	background-attachment: fixed;
+	opacity: .7;
+
+
+}
+
+i a{
+	color: black;
+}
+
+i a:hover{
+	color: #222;
+	text-decoration: none;
+}
+i a:focus{
+	color: #222;
+}
+.material-icons{
+}
