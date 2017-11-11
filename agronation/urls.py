@@ -18,8 +18,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #home page 
+    url(r'^', include('store.urls')),
+
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^index/', include('store.urls')),
 ]
 
 

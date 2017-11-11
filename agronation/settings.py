@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'agronation',
-        'user': 'root',
-        'password': 'vishalzx',
+        'user': 'postgres',
+        'password': '21rfvardaan',
         'host':'localhost',
         'port': '',
     }
@@ -130,3 +130,7 @@ STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
