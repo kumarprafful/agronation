@@ -8,10 +8,13 @@
 	<img src="{{ item_detail.item_image.url }}">
 	<p>Rs.{{ item_detail.item_price }} </p>
 	<form action="{% url 'cart:cart_add' item_detail.id %}" method="post">
-		{{ cart_product_form }}
 		{% csrf_token %}
+
+		{{ cart_product_form }}
 		<input type="submit" value="Add to cart">
 	</form>
 </div>
+
+<!-- {{ product }} -->
 
 {% endblock %}
