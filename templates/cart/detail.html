@@ -1,0 +1,46 @@
+{% extends '../store/base.html' %}
+
+{% block title %} Shopping cart {% endblock %} 
+{% block content %}
+<h1>Your shopping cart</h1>
+<table class="cart">
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>Product</th>
+			<th>Remove</th>
+			<th>Unit price</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in cart %}
+			{% with product=item.item %}
+			<tr>
+				<td><a href="{{product.get_absolute_url}}">
+				<img src="{% if product.image %}{{ product.image.url }}{% endif %}"></a>
+				</td>
+				<td>{{ product.item_name }} </td>
+				<td>{{ item.quantity }}</td>
+				<td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+				<td>Rs.{{ item.price }} </td>
+				<td>Rs.{{ item.total_price }}</td>
+			</tr>
+			{% endwith %}
+		{% endfor %}
+		<tr class="total">
+			<td>Total</td>
+			<td colspan="4"></td>
+			<td>Rs.{{ cart.get_total_price }} </td>
+		</tr>
+	</tbody>
+	
+</table>
+
+<p>
+	<a href="{% url 'store:index' %}">Continue shopping</a>
+	<a href="#" class="button">Checkout</a>
+</p>
+
+
+{% endblock %}

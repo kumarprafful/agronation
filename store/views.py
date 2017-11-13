@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Item
 
+from cart.forms import CartAddProductForm
 # Create your views here.
 
 class ItemListView(ListView):
@@ -16,3 +17,7 @@ class ItemDetailView(DetailView):
 
 
 
+def product_detail(request, id):
+	product = get_object_or_404(Item, id=id)
+	cart_product_form = CartAddProductForm()
+	return render(request, 'store/item_detail.html', {'product':product, 'cart_product_form':cart_product_form})

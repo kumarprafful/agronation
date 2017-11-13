@@ -18,9 +18,12 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #cart
+    url(r'^cart/', include('cart.urls')),
+
     #home page 
     url(r'^', include('store.urls')),
-
+   
     url(r'^accounts/', include('accounts.urls')),
 ]
 

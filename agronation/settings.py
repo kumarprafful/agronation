@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'store',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,4 @@ MEDIA_ROOT = MEDIA_DIR
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+CART_SESSION_ID = 'cart'

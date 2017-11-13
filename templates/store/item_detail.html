@@ -4,9 +4,14 @@
 
 <div>
 	<h3>{{ item_detail.item_name }}</h3>
-	<h3>{{ item_detail.item_cost }}</h3>
 	<h3>{{ item_detail.item_description }}</h3>
 	<img src="{{ item_detail.item_image.url }}">
+	<p>Rs.{{ item_detail.item_price }} </p>
+	<form action="{% url 'cart:cart_add' item_detail.id %}" method="post">
+		{{ cart_product_form }}
+		{% csrf_token %}
+		<input type="submit" value="Add to cart">
+	</form>
 </div>
 
 {% endblock %}

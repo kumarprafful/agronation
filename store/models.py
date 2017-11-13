@@ -6,7 +6,7 @@ from datetime import datetime
 class Item(models.Model):
 	item_type = models.CharField(max_length=255)
 	item_name = models.CharField(max_length=255)
-	item_cost = models.IntegerField()
+	item_price = models.IntegerField()
 	item_description = models.TextField(max_length=5024)
 	item_image = models.ImageField(upload_to='items')
 	date_added = models.DateField(default=datetime.now)
