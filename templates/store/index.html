@@ -1,10 +1,53 @@
 {% extends './base.html' %}
 
+{% block title %}
+{% if category %}
+{{ category.item_type }}
+{% else %}
+Products
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
+<div id="sidebar">
+<h3>Categories</h3>
 <ul>
+	<li><a href="{% url 'store:item_list' %}">All</a> </li>
+	{% for c in categories %}
+	<li><a href="{{ c.get_absolute_url }}"> {{ c.item_type }}</a></li>
+	{% endfor %}
+</ul>
+</div>
+
+<div class="moving-wrapper">
+<div id="main" class="item_list">
+	<h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+	{% for item in items %}
+	<div class="item">
+		<a href="{{ item.get_absolute_url }}">
+			<img class="thumbnail" src="{{ item.item_image.url }}"><br>
+		</a>
+		<a href="{{ item.get_absolute_url }}">{{ item.item_name }}</a><br>
+		Rs.{{ item.item_price }}
+	</div>
+	{% endfor %}
+	
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+<!-- <ul>
 {% for item in items %}
 	<li><a href="{% url 'store:item' item.id %}">{{ item.item_name }}</a></li>
 {% endfor %}
-<ul>
-{% endblock %}
+<ul> -->

@@ -18,13 +18,18 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+     # blog
+    url(r'^blog/', include('blog.urls')),
     #cart
     url(r'^cart/', include('cart.urls')),
 
     #home page 
     url(r'^', include('store.urls')),
-   
+  
+    
     url(r'^accounts/', include('accounts.urls')),
+
+
 ]
 
 

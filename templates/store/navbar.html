@@ -1,11 +1,13 @@
  <nav class="navbar navbar-expand-md bg-success navbar-dark nav-cust">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Agronation</a>
+  <a class="navbar-brand" href="{% url 'store:item_list' %}">Agronation</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+
 
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -23,17 +25,47 @@
   
   <div class="search-div">
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <input class="form-control mr-sm-2 cust-search-input" type="text" placeholder="Search">
         <button class="btn btn-success" type="submit">Search</button>
       </form>
   </div>
 
 </div>
 
+<ul class="navbar-nav">
+
+      {% if user.is_authenticated %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></li>
+
+      {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:register' %}">Sign up</a></li>
+
+
+      {% endif %}
+      
 <div class="cart">
-  <i class="material-icons"><a href="#">shopping_cart</a></i> 
+  <i class="material-icons"><a href="{% url 'cart:cart_detail' %}">shopping_cart</a></i> 
 </div>
+</ul>
+
+
+
 
 
 </nav> 
+
+<div class="navbar navbar-expand-md bg-success navbar-dark">
+
+<ul class="navbar-nav">
+   <li class="nav-item"><a class="nav-link" href="#">Seeds</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">Farming Equipment</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">Pesticides/Weedicides</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">IOT Product</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">Today's offer</a></li>
+   <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Blog</a></li>
+
+
+</ul>
+</div>
 

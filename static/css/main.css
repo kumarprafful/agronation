@@ -12,9 +12,18 @@
 .search-div{
 	margin-left: 20%;
 }
-
-
-
+.cust-search-input{
+	width: 30em !important;
+}
+.center{
+	text-align: center;
+}
+.nav-link{
+	color: #eeffcc !important;
+}
+.nav-link:hover{
+	color: #fff !important;
+}
 
 
 
@@ -43,4 +52,28 @@ i a:focus{
 	color: #222;
 }
 .material-icons{
+}
+
+
+.thumbnail{
+	height: 12em;
+	width: 12em;
+	/*display: inline;*/
+
+}
+.moving-wrapper{
+   border-radius: 1em;
+  margin-bottom: .5em;
+  height: 5em;
+
+  /*display: inline-block;*/
+}
+.item_list{
+	white-space: nowrap;
+	overflow-x: scroll!important;
+}
+.item{
+	 width: 30em;
+    height: 20em;
+    display: inline;
 }
