@@ -18,7 +18,6 @@ class Category(models.Model):
 	def __str__(self):
 		return self.item_type
 
-
 class Item(models.Model):
 	category = models.ForeignKey(Category, related_name='item')
 	item_name = models.CharField(max_length=255, db_index=True)
@@ -36,7 +35,7 @@ class Item(models.Model):
 		index_together = (('id', 'slug'),) 
 
 	def get_absolute_url(self):
-		return reverse('store:item_detail', args=[self.id, self.slug])
+		return reverse('store:item_detail', args=[self.category.slug, self.slug])
 
 
 	def __str__(self):

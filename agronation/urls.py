@@ -18,6 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('accounts.urls')),
+    
      # blog
     url(r'^blog/', include('blog.urls')),
     #cart
@@ -27,7 +29,6 @@ urlpatterns = [
     url(r'^', include('store.urls')),
   
     
-    url(r'^accounts/', include('accounts.urls')),
 
 
 ]

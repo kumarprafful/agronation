@@ -11,17 +11,7 @@
 
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-   <!--  <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul> -->
+  
   
   <div class="search-div">
     <form class="form-inline">
@@ -55,11 +45,29 @@
 
 </nav> 
 
-<div class="navbar navbar-expand-md bg-success navbar-dark">
 
-<ul class="navbar-nav">
-   <li class="nav-item"><a class="nav-link" href="#">Seeds</a></li>
-   <li class="nav-item"><a class="nav-link" href="#">Farming Equipment</a></li>
+<div class="center navbar navbar-expand-md bg-success navbar-dark">
+
+
+
+<ul class="navbar-nav centered-nav">
+
+<!-- categorories -->
+ <div class="dropdown">
+  <a href="{% url 'store:item_list' %}"><button class="dropbtn">Shop by category</button></a>
+  <div class="dropdown-content">
+   <ul>
+         <li><a class="dropdown-item" href="{% url 'store:item_list' %}">All</a> </li>
+      {% for c in categories %}
+         <li><a class="dropdown-item" href="{{ c.get_absolute_url }}"> {{ c.item_type }}</a></li>
+      {% endfor %}
+  </ul>
+  </div>
+</div> 
+
+
+   <li class="nav-item"><a class="nav-link" href="/seeds/">Seeds</a></li>
+   <li class="nav-item"><a class="nav-link" href="/farming-equipments/">Farming Equipment</a></li>
    <li class="nav-item"><a class="nav-link" href="#">Pesticides/Weedicides</a></li>
    <li class="nav-item"><a class="nav-link" href="#">IOT Product</a></li>
    <li class="nav-item"><a class="nav-link" href="#">Today's offer</a></li>

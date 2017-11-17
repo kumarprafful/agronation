@@ -1,12 +1,12 @@
 from django.conf.urls import url
-from .views import item_list, item_detail, product_detail
+from .views import item_list, item_detail
 
 app_name = 'store'
 
 urlpatterns = [
  	url(r'^$', item_list, name='item_list'),
  	url(r'^(?P<category_slug>[-\w]+)/$', item_list, name='item_list_by_category'),
- 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', item_detail, name='item_detail' ),
+ 	url(r'^(?P<category_slug>[-\w]+)/(?P<slug>[-\w]+)/$', item_detail, name='item_detail' ),
 ]
 
 

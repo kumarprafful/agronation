@@ -1,13 +1,44 @@
 {% extends './base.html' %}
 
 {% block content %}
+
+
 <div class="product-detail">
-	<h2><a href="{{ item.get_absolute_url }}">{{ item.category }} </a></h2>
-	<h1>{{ item.item_name }}</h1>
-	<img src="{{ item.item_image.url }}">
-	<p>Rs.{{ item.item_price }}</p>
-	{{ item.item_description|linebreaks }}
+	<div class="row">
+		<div class="col-md-5 img-detail moving-wrapper">
+			<img class="item-detail-image" src="{{ item.item_image.url }}">
+		</div>
+		<div class="col-md-5 moving-wrapper">
+			<h5>{{ item.item_name|title }}</h5>
+			<p>{{ item.category }}</p>
+			<p><b>₹{{ item.item_price }}</b> </p>
+			<p>{{ item.item_description|capfirst|linebreaks }}</p>
+			
+			{% if item.stock > 10 %}
+				<p class="text-success">In stock</p>
+			{% elif item.stock == 0 %}
+				<p class="text-danger">Sorry, out of stock.</p>
+			{% else %}
+				<p class="text-warning">Hurry! only {{ item.stock }} left. </p>
+			{% endif %}
+			
+
+			<form action="{% url 'cart:cart_add' item.id %}" method="post">
+				{% csrf_token %}
+
+				{{ cart_product_form }}
+				<input class="btn btn-warning" type="submit" value="Add to cart" style="cursor: pointer;">
+				<input class="btn btn-info" type="submit" value="Buy now" style="cursor: pointer;">
+
+			</form>
+						
+		</div>
 	
+	</div>
+
+
+
+
 </div>
 
 
