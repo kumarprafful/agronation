@@ -4,6 +4,7 @@
 
 
 <div class="product-detail">
+	<div class="row1"> 
 	<div class="row">
 		<div class="col-md-5 img-detail moving-wrapper">
 			<img class="item-detail-image" src="{{ item.item_image.url }}">
@@ -23,17 +24,20 @@
 			{% endif %}
 			
 
+			{% if item.stock > 0 %}
 			<form action="{% url 'cart:cart_add' item.id %}" method="post">
 				{% csrf_token %}
 
-				{{ cart_product_form }}
+				{{ cart_product_form.quantity }}
 				<input class="btn btn-warning" type="submit" value="Add to cart" style="cursor: pointer;">
 				<input class="btn btn-info" type="submit" value="Buy now" style="cursor: pointer;">
 
 			</form>
-						
+
+			{% endif %}			
 		</div>
 	
+	</div>
 	</div>
 
 

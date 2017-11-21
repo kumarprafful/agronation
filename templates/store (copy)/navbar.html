@@ -1,0 +1,177 @@
+<!-- header -->
+  <div class="agileits_header">
+    <div class="w3l_offers">
+      <a href="{% url 'store:item_list' %}">Agronation</a>
+    </div>
+    <div class="w3l_search">
+      <form action="#" method="post">
+        <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+        <input type="submit" value=" ">
+      </form>
+    </div>
+    <div class="product_list_header">  
+        <a href="{% url 'cart:cart_detail' %}"><input type="button" value="View your cart" class="button" /></a>
+    </div>
+    <div class="w3l_header_right">
+      <ul>
+        <li class="dropdown profile_details_drop">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+          <div class="mega-dropdown-menu">
+            <div class="w3ls_vegetables">
+              <ul class="dropdown-menu drp-mnu">
+                <li><a href="{% url 'accounts:login' %}">Login</a></li> 
+                <li><a href="{% url 'accounts:register' %}">Sign Up</a></li>
+              </ul>
+            </div>                  
+          </div>  
+        </li>
+      </ul>
+    </div>
+    <div class="w3l_header_right1">
+      <h2><a href="#">Contact Us</a></h2>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+<!-- script-for sticky-nav -->
+  <script>
+  $(document).ready(function() {
+     var navoffeset=$(".agileits_header").offset().top;
+     $(window).scroll(function(){
+      var scrollpos=$(window).scrollTop(); 
+      if(scrollpos >=navoffeset){
+        $(".agileits_header").addClass("fixed");
+      }else{
+        $(".agileits_header").removeClass("fixed");
+      }
+     });
+     
+  });
+  </script>
+<!-- //script-for sticky-nav -->
+  <div class="logo_products">
+    <div class="container">
+      <div class="w3ls_logo_products_left">
+        <h1><a href="{% url 'store:item_list' %}"><span>Agronation</span> Store</a></h1>
+      </div>
+      <div class="w3ls_logo_products_left1">
+        <ul class="special_items">
+          <!-- <li><a href="events.html">Events</a><i>/</i></li> -->
+          <li><a href="{% url 'home:index' %}">About Us</a><i>/</i></li>
+          <li><a href="#">Best Deals</a><i>/</i></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+      <div class="w3ls_logo_products_left1">
+        <ul class="phone_email">
+          <li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
+          <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">lorem@impsum.com</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <nav class="navbar navbar-expand-md bg-success navbar-dark nav-cust">
+  
+  <a class="navbar-brand" href="{% url 'store:item_list' %}">Agronation</a>
+
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  
+  
+  <div class="search-div">
+    <form class="form-inline">
+        <input class="form-control mr-sm-2 cust-search-input" type="text" placeholder="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+  </div>
+
+</div>
+
+<ul class="navbar-nav">
+
+      {% if user.is_authenticated %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></li>
+
+      {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:register' %}">Sign up</a></li>
+
+
+      {% endif %}
+      
+<div class="cart">
+  <i class="material-icons"><a href="{% url 'cart:cart_detail' %}">shopping_cart</a></i> 
+</div>
+</ul>
+
+
+
+
+
+</nav> 
+
+
+<div class="center navbar navbar-expand-md bg-success navbar-dark">
+
+
+
+<ul class="navbar-nav centered-nav">
+
+
+ <div class="dropdown">
+  <a href="{% url 'store:item_list' %}"><button class="dropbtn">Shop by category</button></a>
+  <div class="dropdown-content">
+   <ul>
+         <li><a class="dropdown-item" href="{% url 'store:item_list' %}">All</a> </li>
+      {% for c in categories %}
+         <li><a class="dropdown-item" href="{{ c.get_absolute_url }}"> {{ c.item_type }}</a></li>
+      {% endfor %}
+  </ul>
+  </div>
+</div> 
+
+
+   <li class="nav-item"><a class="nav-link" href="/seeds/">Seeds</a></li>
+   <li class="nav-item"><a class="nav-link" href="/farming-equipments/">Farming Equipment</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">Pesticides/Weedicides</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">IOT Product</a></li>
+   <li class="nav-item"><a class="nav-link" href="#">Today's offer</a></li>
+   <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Blog</a></li>
+
+
+</ul>
+</div>
+
+ -->

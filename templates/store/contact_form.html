@@ -1,0 +1,45 @@
+<form id="contact_form">
+{% csrf_token %}
+
+<input class="form-control form-name" type="text" name="name" id="name" placeholder="Name" required>
+<input class="form-control form-email" type="email" name="email" id="email" placeholder="Email" required>
+<input class="form-control form-number" type="text" name="number" id="number" placeholder="Contact number" required>
+<input class="form-control form-subject" type="text" name="subject" id="subject" placeholder="Subject" required>
+<textarea class="form-control form-msg1" type="text" name="content" id="content" placeholder="Enter your message" required></textarea>
+<!-- <textarea class="form-control form-msg"  placeholder="Enter your message"></textarea> -->
+<!-- <input type="submit" id="submit" name="submit" value="Submit"> -->
+<!-- <button class="btn btn1">Submit</button> -->
+</form>
+
+
+
+<script type="text/javascript">
+	$(document).on('submit', '#contact_form', function(e){
+		e.preventDefault();
+
+		$.ajax({
+			type: 'POST',
+			url: '/contact/submit/',
+			data:{
+				name:$('#name').val(),
+				email:$('#email').val(),
+				number:$('#number').val(),
+				subject:$('#subject').val(),
+				content:$('#content').val(),
+				csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+
+			},
+			success:function(){
+				clearMsg()
+			}
+		});
+	});
+
+	function clearMsg(){
+		var s = document.getElementById('contactForm');
+		v = "<div class='form_msg'><h2>Your message has been recorded.<br>Thank you for your response.</h2></div>"
+		s.innerHTML = v;
+		console.log("Success");
+	}
+
+</script>

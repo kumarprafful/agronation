@@ -11,7 +11,7 @@ a:focus,a:active {
 }
 
 .navbar-dark{
-	background-color: #005A31!important;
+	background-color: #2eb82e!important;
 }
 /*navbar*/
 .nav-cust{
@@ -109,6 +109,7 @@ i a:focus{
 	background-color: #fff;
 	width: auto;
 	box-shadow: 10px 10px 5px rgb(215,215,215);
+	padding: 5% 3%;
 
   /*display: inline-block;*/
 }
@@ -132,12 +133,6 @@ i a:focus{
 .thumbnail{
 	height: 12em;
 	width: 12em;
-	/*display: inline;*/
-
-}
-.thumbnail:hover{
-	height: 13em;
-	width: 13em;
 	/*display: inline;*/
 
 }
@@ -218,7 +213,23 @@ i a:focus{
 	height: 15em;
 }
 .product-detail{
-	margin: 2em 0;
+	margin: 2% 5%	;
 }
 .img-detail{
+}
+.cart-img{
+	height: 8em;
+	width: 8em;
+}
+.cart{
+	/*margin-left: : 2%;*/
+	width: 100%;
+	background: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	
+}
+.cart-card{
+	border-top: 1px solid rgb(215,215,215);
+	border-bottom: 1px solid rgb(215,215,215);
+
 }

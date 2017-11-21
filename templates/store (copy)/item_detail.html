@@ -1,0 +1,109 @@
+{% extends './base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="{% static 'js/okzoom.js' %}"></script>
+  <script>
+    $(function(){
+      $('#example').okzoom({
+        width: 150,
+        height: 150,
+        border: "1px solid black",
+        shadow: "0 0 5px #000"
+      });
+    });
+  </script>
+
+  <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+
+<!-- banner -->
+	<div class="banner">
+		<div class="w3l_banner_nav_left">
+			<nav class="navbar nav_bottom">
+			 <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header nav_2">
+				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+			   </div> 
+			   <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav nav_1">
+						{% for ct in categories %}
+						<li><a href="{{ ct.get_absolute_url }}">{{ ct.item_type }}</a></li>
+						{% endfor %}
+					</ul>
+				 </div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+		<div class="w3l_banner_nav_right">
+			<!-- <div class="w3l_banner_nav_right_banner3">
+				<h3>Best Deals For New Products<span class="blink_me"></span></h3>
+			</div> -->
+			<div class="agileinfo_single">
+				<h5>{{item.item_name}}</h5>
+				<div class="col-md-4 agileinfo_single_left">
+					<img id="example" src="{{item.item_image.url}}" alt=" " class="img-responsive" />
+				</div>
+				<div class="col-md-8 agileinfo_single_right">
+					<div class="w3agile_description">
+						<h4>Description :</h4>
+						<p>{{item.item_description|capfirst|linebreaks}}</p>
+						{% if item.stock > 10 %}
+							<p class="text-success">In stock</p>
+						{% elif item.stock == 0 %}
+							<p class="text-danger">Sorry, out of stock.</p>
+						{% else %}
+							<p class="text-warning">Hurry! only {{ item.stock }} left. </p>
+						{% endif %}
+					</div>
+					<div class="snipcart-item block">
+						<div class="snipcart-thumb agileinfo_single_right_snipcart">
+							<h4>Rs. {{item.item_price}}</h4>
+						</div>
+					</div>
+					<form action="{% url 'cart:cart_add' item.id %}" method="post">
+			
+						{{ cart_product_form.quantity }}
+						<input class="btn btn-warning" type="submit" value="Add to cart" style="cursor: pointer;">
+						<input class="btn btn-info" type="submit" value="Buy now" style="cursor: pointer;">
+						{% csrf_token %}
+
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+
+{% endblock %}
+<!-- DISCARDED CODE
+<div>
+	<h3>{{ item_detail.item_name }}</h3>
+	<h3>{{ item_detail.item_description }}</h3>
+	<img src="{{ item_detail.item_image.url }}">
+	<p>Rs.{{ item_detail.item_price }} </p>
+	<form action="{% url 'cart:cart_add' item_detail.id %}" method="post">
+		{% csrf_token %}
+
+		{{ cart_product_form }}
+		<input type="submit" value="Add to cart">
+	</form>
+</div>
+ -->

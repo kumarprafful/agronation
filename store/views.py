@@ -18,7 +18,9 @@ def item_list(request, category_slug=None):
 def item_detail(request, category_slug, slug):
 	category = get_object_or_404(Category, slug=category_slug)
 	item = get_object_or_404(Item, slug=slug)
-	return render(request, 'store/item_detail.html', {'item':item})
+	cart_product_form = CartAddProductForm()
+	categories = Category.objects.all()
+	return render(request, 'store/item_detail.html', {'item':item, 'cart_product_form':cart_product_form, 'categories':categories})
 
 
 

@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 
 
 from .forms import UserForm
+from cart.models import Cart
 
 
 # Create your views here.
@@ -18,6 +19,7 @@ def register(request):
 			user.save()
 
 			registered = True
+			Cart.objects.create(user=user)
 			return HttpResponseRedirect(reverse('accounts:login'))
 	else:
 		user_form = UserForm()

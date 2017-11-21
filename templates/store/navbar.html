@@ -28,7 +28,7 @@
       <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></li>
 
       {% else %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link btn btn-success" href="{% url 'accounts:login' %}">Login</button></a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'accounts:register' %}">Sign up</a></li>
 
 
@@ -58,17 +58,17 @@
   <div class="dropdown-content">
    <ul>
          <li><a class="dropdown-item" href="{% url 'store:item_list' %}">All</a> </li>
-      {% for c in categories %}
-         <li><a class="dropdown-item" href="{{ c.get_absolute_url }}"> {{ c.item_type }}</a></li>
+      {% for ct in categories %}
+         <li><a class="dropdown-item" href="{{ c.get_absolute_url }}"> {{ ct.item_type }}</a></li>
       {% endfor %}
   </ul>
   </div>
 </div> 
 
 
-   <li class="nav-item"><a class="nav-link" href="/seeds/">Seeds</a></li>
-   <li class="nav-item"><a class="nav-link" href="/farming-equipments/">Farming Equipment</a></li>
-   <li class="nav-item"><a class="nav-link" href="#">Pesticides/Weedicides</a></li>
+   <li class="nav-item"><a class="nav-link" href="/store/seeds/">Seeds</a></li>
+   <li class="nav-item"><a class="nav-link" href="/store/farming-equipments/">Farming Equipment</a></li>
+   <li class="nav-item"><a class="nav-link" href="store/pesticides">Pesticides/Weedicides</a></li>
    <li class="nav-item"><a class="nav-link" href="#">IOT Product</a></li>
    <li class="nav-item"><a class="nav-link" href="#">Today's offer</a></li>
    <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Blog</a></li>
