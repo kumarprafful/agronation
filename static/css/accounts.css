@@ -1,0 +1,48 @@
+.account-wrapper{
+	margin: 0 auto;
+	width:20em;
+}
+.account-wrapper1{
+	margin: 0 auto;
+	width:25em;
+}
+.account-sub-wrapper{
+	border: 1px solid rgb(215,215,215);
+	padding: 5%;
+	width: 
+}
+.center{
+	text-align: center;
+}
+.logo{
+	text-align: center;
+}
+.logo-login{
+	height: 10em;
+	width: 10em;
+}
+#id_username, #id_password,#id_first_name,#id_last_name,#id_email{
+	width: 100%;
+}
+h2{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+}
+label{
+	font-family: 'Lato', sans-serif;
+    font-size: 1em;
+
+}
+.subscript{
+	color: #222;
+	font-size: .8em;
+	text-align: center;
+}
+a:hover{
+	text-decoration: none;
+	cursor:pointer;
+
+}
+.helptext{
+	display: none;
+}

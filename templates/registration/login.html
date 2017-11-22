@@ -1,13 +1,32 @@
-{% extends '../store/base.html' %}
+{% extends '../accounts/base.html' %}
 
 {% block title %} Login{% endblock %}
 
 {% block content %}
 
+{% load staticfiles %}
+
+<div class="account-wrapper">
+<div class="logo">
+	<img class="logo-login" src="{% static 'img/logo.png' %}">	
+</div>
+
+<div class="account-sub-wrapper">
+<h2 style="text-align: left;">Login</h2>
+
 <form method="post">
 	{% csrf_token %}
 	{{ form.as_p }}
-	<button class="btn btn-success">Login</button>
+	<button class="btn btn-success btn-block">Login</button>
 </form>
+</div>
+
+<div class="">
+<br>
+	<h6 class="subscript">New to Agronation</h6><br>
+	<a href="{% url 'accounts:register' %}"><button class="btn btn-warning btn-block">Create your Agronation account</button></a>
+</div>
+
+</div>
 
 {% endblock %}
