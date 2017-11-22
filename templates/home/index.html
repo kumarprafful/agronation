@@ -97,19 +97,16 @@
 				<div class="inner">
 					<article class="box">
 						<header>
-							<h2>Our Team</h2>
+							<h2>Core Team</h2>
 						</header>
 						<div class="content">
 						    <div id="myCarousel" class="carousel slide container">
 						        <div class="carousel-inner">
-							        {% for member in team %}
-	  									
-									  {% if forloop.counter == 1 %}
 									    <div class="item active">
 									      <div class="col-xs-4">
-									      	<img src="{{ member.image.url }}" class="member-img img-responsive">
+									      	<img src="{% static 'images/IMG_20171121_141024.jpg' %}" class="member-img img-responsive">
 									      	<span>Rajiv Jha</span><br>
-									      	<span>{{ member.designation }}	</span><br><br>
+									      	<span></span><br><br>
 									      	<ul style="display: inline;">
 									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
 									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
@@ -117,13 +114,11 @@
 									      	</ul>
 									      </div>
 									    </div>
-
-									   {% else %}
-									   	<div class="item">
+									    <div class="item">
 									      <div class="col-xs-4">
-									      	<img src="{{ member.image.url }}" class="member-img img-responsive">
-									      	<span>{{ member.name }}</span><br>
-									      	<span>{{ member.designation }}</span><br><br>
+									      	<img src="{% static 'images/FB_IMG_1511290819676.jpg' %}" class="member-img img-responsive">
+									      	<span>Sanjay Kr. Meena</span><br>
+									      	<span></span><br><br>
 									      	<ul style="display: inline;">
 									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
 									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
@@ -131,10 +126,42 @@
 									      	</ul>
 									      </div>
 									    </div>
-
-									    {% endif %}
-
-									{% endfor %}
+									    <div class="item">
+									      <div class="col-xs-4">
+									      	<img src="{% static 'images/pranjal.jpg' %}" class="member-img img-responsive">
+									      	<span>Pranjal Rajan</span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
+									    <div class="item">
+									      <div class="col-xs-4">
+									      	<img src="{% static 'images/IMG_20160616_122040.jpg' %}" class="member-img img-responsive">
+									      	<span>Deepak</span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
+									    <div class="item">
+									      <div class="col-xs-4">
+									      	<img src="{% static 'images/FB_IMG_1511290618312.jpg' %}" class="member-img img-responsive">
+									      	<span></span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
 								</div>
 
 									  <!-- Controls -->
@@ -152,7 +179,81 @@
 				</div>
 				<a href="#four" class="more">Learn More</a>
 			</section>
-			<section class="wrapper post bg-img">
+			<section id="four" class="wrapper post bg-img" data-bg="{% static 'img/bg1.jpeg' %}">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>Tech Team</h2>
+						</header>
+						<div class="content">
+									    <div class="item">
+									      <div class="col-xs-4">
+									      	<img src="{% static 'images/prafful.jpg' %}" class="member-img img-responsive">
+									      	<span>Prafful Kumar</span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
+									    <div class="item">
+									      <div class="col-xs-4">
+									      	<img src="{% static 'images/vishal.jpeg' %}" class="member-img img-responsive">
+									      	<span>Vishal Pal</span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
+						</div>
+					</article>
+				</div>
+				<a href="#five" class="more">Learn More</a>
+			</section>
+			<section id="five" class="wrapper post bg-img" data-bg="{% static 'img/thumb-1920-597633.jpg' %}">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>Advisory Board</h2>
+						</header>
+						<div class="content">
+						    <div id="myCarousel" class="carousel slide container">
+						        <div class="carousel-inner">
+									    <div class="item active">
+									      <div class="col-xs-4">
+									      	<img src="" class="member-img img-responsive">
+									      	<span></span><br>
+									      	<span></span><br><br>
+									      	<ul style="display: inline;">
+									      		<li style="display: inline;"><a href="{{ member.facebook }}"><i class="fa fa-facebook"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.twitter }}"><i class="fa fa-twitter"></i></a></li>
+									      		<li style="display: inline;"><a href="{{ member.github }}"><i class="fa fa-github"></i></a></li>
+									      	</ul>
+									      </div>
+									    </div>
+								</div>
+
+									  <!-- Controls -->
+									  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+									    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									    <span class="sr-only">Previous</span>
+									  </a>
+									  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+									    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									    <span class="sr-only">Next</span>
+									  </a>
+							</div>
+						</div>
+					</article>
+				</div>
+				<a href="#six" class="more">Learn More</a>
+			</section>
+			<section id="six" class="wrapper post bg-img">
 			 <iframe src="//www.google.com/maps/embed/v1/place?q=Guru%20Gobind%20Singh%20Indraprastha%20University%20Main%20Gate
       &zoom=13
       &attribution_source=Google+Maps+Embed+API
